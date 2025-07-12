@@ -1,0 +1,154 @@
+<section class="wpo-couple-section-s2 section-padding" id="calendar">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center mb-4">
+        <div class="event-details-card wow fadeInUp" data-wow-duration="1000ms">
+          <div class="decorative-line"></div>
+          <h3 class="event-title">Thư Mời</h3>
+          <p class="event-subtitle">THAM DỰ LỄ CƯỚI CỦA Luân & PHƯƠNG</p>
+        </div>
+      </div>
+
+      <div class="col-12 text-center mb-4">
+        <div class="event-details-card wow fadeInUp" data-wow-duration="1000ms">
+          <h3 class="event-title">TIỆC CƯỚI</h3>
+
+          <p class="event-time">Vào Lúc <strong>11h30 | CHỦ NHẬT</strong></p>
+
+          <div class="event-date-wrap">
+            <div class="date-part month">Tháng 2</div>
+            <div class="date-part day">?</div>
+            <div class="date-part year">2026</div>
+          </div>
+
+          <p class="lunar-date">()</p>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center">
+        <div class="couple-calendar">
+          <div class="couple-calendar-img"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .couple-calendar {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .couple-calendar-img {
+    background-image: url("/images/couples/calendar_feb.png");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  }
+  #calendar h3 {
+    font-size: 31px;
+    line-height: 50px;
+  }
+
+  #calendar h4 {
+    font-family: "Open Sans", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .event-details-card {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 30px;
+    text-align: center;
+  }
+
+  .event-details-card .event-title {
+    font-size: 22px;
+    font-weight: 500;
+    color: #323232;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  .event-details-card .event-time {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+  }
+
+  .event-date-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .event-date-wrap .date-part {
+    padding: 0 25px;
+    position: relative;
+  }
+
+  /* Đường kẻ dọc */
+  .event-date-wrap .date-part:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 60px; /* Điều chỉnh chiều cao của đường kẻ */
+    background-color: #e0e0e0;
+  }
+
+  .event-date-wrap .month,
+  .event-date-wrap .year {
+    font-family: "Jost", sans-serif;
+    font-size: 24px;
+    font-weight: 500;
+    color: #323232;
+  }
+
+  .event-date-wrap .day {
+    font-family: "monallesia", serif;
+    font-size: 80px;
+    color: #323232;
+    line-height: 1;
+  }
+
+  .event-details-card .lunar-date {
+    font-family: "Jost", sans-serif;
+    font-style: italic;
+    color: #848892;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+
+  /* Responsive cho màn hình nhỏ */
+  @media (max-width: 767px) {
+    .event-details-card {
+      padding: 40px 20px;
+    }
+    .event-details-card .event-title {
+      font-size: 18px;
+    }
+    .event-details-card .event-time {
+      font-size: 16px;
+    }
+    .event-date-wrap .day {
+      font-size: 60px;
+    }
+    .event-date-wrap .month,
+    .event-date-wrap .year {
+      font-size: 20px;
+    }
+    .event-date-wrap .date-part {
+      padding: 0 15px;
+    }
+  }
+</style>

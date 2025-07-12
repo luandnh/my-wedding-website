@@ -1,0 +1,21 @@
+# Bỏ qua thư mục node_modules
+node_modules
+
+# Bỏ qua các thư mục build của Astro
+dist
+.astro
+
+# Bỏ qua các tệp biến môi trường (trừ file mẫu)
+.env
+.env.*
+!.env.example
+
+# Bỏ qua các tệp log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Bỏ qua các tệp hệ thống của HĐH
+.DS_Store
+Thumbs.db
