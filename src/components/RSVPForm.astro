@@ -1,0 +1,125 @@
+---
+// src/components/RSVPForm.astro
+---
+
+<section class="wpo-contact-section-s3 section-padding" id="rsvp">
+  <div class="container">
+    <div class="row">
+      <div class="col col-lg-10 offset-lg-1">
+        <div class="wpo-contact-section-wrapper">
+          <div class="wpo-contact-form-area">
+            <div class="wpo-section-title">
+              <h4>Xác Nhận Tham Dự Lễ Cưới</h4>
+            </div>
+            <form
+              method="post"
+              class="contact-validation-active"
+              id="contact-form-main"
+            >
+              <div>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="name"
+                  id="name"
+                  placeholder="Tên của bạn"
+                />
+              </div>
+              <div class="radio-buttons">
+                <p>
+                  <input type="radio" id="attend" name="radio-group" checked />
+                  <label for="attend">Chắc chắn rồi, tôi sẽ đến</label>
+                </p>
+                <p>
+                  <input type="radio" id="not" name="radio-group" />
+                  <label for="not">Tiếc quá, tôi không thể đến</label>
+                </p>
+              </div>
+              <div>
+                <select name="guest" class="form-control">
+                  <option disabled selected>Số lượng khách tham dự</option>
+                  <option>1 người</option>
+                  <option>2 người</option>
+                  <option>3 người</option>
+                  <option>4 người</option>
+                  <option>Nhiều hơn 4 người</option>
+                </select>
+              </div>
+              <div class="submit-area">
+                <button type="submit" class="theme-btn">Gửi Lời Chúc</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    /* CSS để đảm bảo form hiển thị đúng */
+    .wpo-contact-section-s3 .wpo-contact-section-wrapper {
+      background-color: #fff;
+      border: 1px solid #f3ece9;
+    }
+    .wpo-contact-section-s3 .wpo-contact-form-area {
+      padding: 30px 20px;
+    }
+    .wpo-contact-section-s3 .wpo-contact-form-area .form-control,
+    .wpo-contact-section-s3 .wpo-contact-form-area select.form-control {
+      color: #525252;
+      border-color: #d9d9d9;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+    .wpo-contact-section-s3 .wpo-contact-form-area select.form-control {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      background: transparent
+        url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e")
+        no-repeat right 0.75rem center/16px 12px;
+    }
+    .wpo-contact-section-s3 .radio-buttons {
+      display: flex;
+      padding: 10px 0 20px;
+      justify-content: center;
+    }
+    .wpo-contact-section-s3 .radio-buttons p {
+      margin: 0 15px;
+    }
+    .wpo-contact-section-s3 .radio-buttons [type="radio"] {
+      display: none;
+    }
+    .wpo-contact-section-s3 .radio-buttons label {
+      position: relative;
+      padding-left: 28px;
+      cursor: pointer;
+      line-height: 20px;
+      display: inline-block;
+      color: #555;
+    }
+    .wpo-contact-section-s3 .radio-buttons label:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #ddd;
+      border-radius: 100%;
+      background: #fff;
+    }
+    .wpo-contact-section-s3
+      .radio-buttons
+      [type="radio"]:checked
+      + label:after {
+      content: "";
+      width: 12px;
+      height: 12px;
+      background: #d4b0a5;
+      position: absolute;
+      top: 4px;
+      left: 4px;
+      border-radius: 100%;
+    }
+  </style>
+</section>

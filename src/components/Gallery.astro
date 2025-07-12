@@ -21,9 +21,9 @@ const { title, subtitle, images } = Astro.props;
 <!-- Bắt đầu Section Thư viện ảnh -->
 <section class="wpo-portfolio-section-s2 section-padding" id="gallery">
   <div class="container">
-    <div class="wpo-section-title">
-      <h4>{subtitle}</h4>
-      <h2>{title}</h2>
+    <div class="wpo-section-title gallery-heading">
+      <h1>{subtitle}</h1>
+      <h3>{title}</h3>
     </div>
     <div class="sortable-gallery">
       <div class="row">
@@ -68,6 +68,13 @@ const { title, subtitle, images } = Astro.props;
   document.addEventListener("DOMContentLoaded", initializeGallery);
 </script>
 <style>
+  .gallery-heading h1 {
+    font-family: "Alex Brush", serif;
+    color: #939580;
+  }
+  .gallery-heading h3 {
+    font-family: "Dancing Script", serif;
+  }
   @media (max-width: 767px) {
     .portfolio-grids .grid {
       width: 33.3%;
