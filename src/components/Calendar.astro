@@ -1,4 +1,4 @@
-<section class="wpo-couple-section-s2 section-padding" id="calendar">
+<section class="wpo-couple-section-s2 pt-1" id="calendar">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-12 text-center mb-4">
@@ -11,153 +11,220 @@
             <span class="event-couple-name">LUÂN & PHƯƠNG </span>
           </p>
         </div>
-      </div>
-
-      <div class="col-12 text-center mb-4">
-        <div class="event-details-card wow fadeInUp" data-wow-duration="1000ms">
-          <h3 class="event-title">TIỆC CƯỚI</h3>
-
-          <p class="event-time">Vào Lúc <strong>11h30 | CHỦ NHẬT</strong></p>
-
-          <div class="event-date-wrap">
-            <div class="date-part month">Tháng 2</div>
-            <div class="date-part day">?</div>
-            <div class="date-part year">2026</div>
+        <div class="photo-collage">
+          <div class="photo-item photo-left wow fadeInLeft" data-wow-duration="1200ms">
+            <img
+              src="/images/album/image-01.jpeg"
+              alt="Ảnh cưới của Hùng và Hằng 1"
+            />
           </div>
-
-          <p class="lunar-date">()</p>
+          <div class="photo-item photo-center wow fadeInUp" data-wow-duration="1200ms">
+            <img
+              src="/images/album/image-02.jpeg"
+              alt="Ảnh cưới của Hùng và Hằng 2"
+            />
+          </div>
+          <div class="photo-item photo-right wow fadeInRight" data-wow-duration="1200ms">
+            <img
+              src="/images/album/image-03.jpeg"
+              alt="Ảnh cưới của Hùng và Hằng 3"
+            />
+          </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-center">
-        <div class="couple-calendar">
-          <div class="couple-calendar-img"></div>
+
+        <div class="col-12 text-center mb-4">
+          <div
+            class="event-details-card wow fadeInUp"
+            data-wow-duration="1000ms"
+          >
+            <h3 class="event-title">TIỆC CƯỚI</h3>
+
+            <p class="event-time">Vào Lúc <strong>11h30 | CHỦ NHẬT</strong></p>
+
+            <div class="event-date-wrap">
+              <div class="date-part month">Tháng 2</div>
+              <div class="date-part day">?</div>
+              <div class="date-part year">2026</div>
+            </div>
+
+            <p class="lunar-date">()</p>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <div class="couple-calendar">
+            <div class="couple-calendar-img"></div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</section>
 
-<style>
-  .couple-calendar {
-    position: relative;
-    width: 100%;
-    min-height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .couple-calendar-img {
-    background-image: url("/images/couples/calendar_feb.png");
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-  }
-  #calendar h3 {
-    font-size: 31px;
-    line-height: 50px;
-  }
-
-  #calendar h4 {
-    font-family: "Open Sans", sans-serif;
-    font-size: 18px;
-    line-height: 30px;
-  }
-
-  .event-details-card {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 50px 30px;
-    text-align: center;
-  }
-
-  .event-title,
-  .event-couple-name {
-    font-family: "Dancing Script", serif;
-  }
-
-  .event-details-card .event-title {
-    font-size: 22px;
-    font-weight: 500;
-    color: #323232;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-
-  .event-details-card .event-time {
-    font-size: 18px;
-    color: #555;
-    margin-bottom: 30px;
-  }
-
-  .event-date-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-  }
-
-  .event-date-wrap .date-part {
-    padding: 0 25px;
-    position: relative;
-  }
-
-  /* Đường kẻ dọc */
-  .event-date-wrap .date-part:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 1px;
-    height: 60px; /* Điều chỉnh chiều cao của đường kẻ */
-    background-color: #e0e0e0;
-  }
-
-  .event-date-wrap .month,
-  .event-date-wrap .year {
-    font-family: "Dancing Script", cursive;
-    font-size: 24px;
-    font-weight: 500;
-    color: #323232;
-  }
-
-  .event-date-wrap .day {
-    font-family: "Dancing Script", cursive;
-    font-size: 80px;
-    color: #323232;
-    line-height: 1;
-  }
-
-  .event-details-card .lunar-date {
-    font-family: "Dancing Script", cursive;
-    font-style: italic;
-    color: #848892;
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  /* Responsive cho màn hình nhỏ */
-  @media (max-width: 767px) {
-    .event-details-card {
-      padding: 40px 20px;
+  <style>
+    .couple-calendar {
+      position: relative;
+      width: 100%;
+      min-height: 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    .event-details-card .event-title {
+    .couple-calendar-img {
+      background-image: url("/images/couples/calendar_feb.png");
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+    }
+    #calendar h3 {
+      font-size: 31px;
+      line-height: 50px;
+    }
+
+    #calendar h4 {
+      font-family: "Open Sans", sans-serif;
       font-size: 18px;
+      line-height: 30px;
     }
+
+    .event-details-card {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 50px 30px;
+      text-align: center;
+    }
+
+    .event-title,
+    .event-couple-name {
+      font-family: "Dancing Script", serif;
+    }
+
+    .event-details-card .event-title {
+      font-size: 22px;
+      font-weight: 500;
+      color: #323232;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
     .event-details-card .event-time {
-      font-size: 16px;
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
     }
-    .event-date-wrap .day {
-      font-size: 60px;
+
+    .event-date-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
     }
+
+    .event-date-wrap .date-part {
+      padding: 0 25px;
+      position: relative;
+    }
+
+    /* Đường kẻ dọc */
+    .event-date-wrap .date-part:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 1px;
+      height: 60px; /* Điều chỉnh chiều cao của đường kẻ */
+      background-color: #e0e0e0;
+    }
+
     .event-date-wrap .month,
     .event-date-wrap .year {
-      font-size: 20px;
+      font-family: "Dancing Script", cursive;
+      font-size: 24px;
+      font-weight: 500;
+      color: #323232;
     }
-    .event-date-wrap .date-part {
-      padding: 0 15px;
+
+    .event-date-wrap .day {
+      font-family: "Dancing Script", cursive;
+      font-size: 80px;
+      color: #323232;
+      line-height: 1;
     }
-  }
-</style>
+
+    .event-details-card .lunar-date {
+      font-family: "Dancing Script", cursive;
+      font-style: italic;
+      color: #848892;
+      font-size: 16px;
+      margin-top: 20px;
+    }
+
+    /* Responsive cho màn hình nhỏ */
+    @media (max-width: 767px) {
+      .event-details-card {
+        padding: 40px 20px;
+      }
+      .event-details-card .event-title {
+        font-size: 18px;
+      }
+      .event-details-card .event-time {
+        font-size: 16px;
+      }
+      .event-date-wrap .day {
+        font-size: 60px;
+      }
+      .event-date-wrap .month,
+      .event-date-wrap .year {
+        font-size: 20px;
+      }
+      .event-date-wrap .date-part {
+        padding: 0 15px;
+      }
+    }
+
+    .photo-collage {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      gap: 20px;
+      height: 60vh; /* Đặt chiều cao cố định cho container */
+    }
+    .photo-collage .photo-item {
+      position: relative;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      border: 8px solid #fff;
+      background-color: #fff;
+      overflow: hidden; /* Ẩn phần ảnh bị thừa */
+    }
+    .photo-collage .photo-item img {
+      width: 100%;
+      height: 100%; /* Bắt ảnh lấp đầy container */
+      object-fit: cover; /* Cắt ảnh để vừa với container mà không làm méo */
+      display: block;
+    }
+    .photo-collage .photo-center {
+      width: 38%;
+      height: 100%; /* Chiều cao tối đa */
+    }
+    .photo-collage .photo-left {
+      width: 29%;
+      height: 85%; /* Chiều cao nhỏ hơn */
+    }
+    .photo-collage .photo-right {
+      width: 29%;
+      height: 85%; /* Chiều cao nhỏ hơn */
+    }
+
+    /* Responsive */
+    @media (max-width: 767px) {
+      .photo-collage {
+        gap: 3px;
+        height: 250px; /* Điều chỉnh chiều cao cho mobile */
+      }
+      .photo-collage .photo-item {
+        border-width: 4px;
+      }
+    }
+  </style>
+</section>

@@ -16,10 +16,11 @@ export interface Props {
 }
 
 const { title, subtitle, images } = Astro.props;
+const wowAnimations = ["fadeInUp", "fadeInDown", "fadeInLeft", "fadeInRight"];
 ---
 
 <!-- Bắt đầu Section Thư viện ảnh -->
-<section class="wpo-portfolio-section-s2 section-padding" id="gallery">
+<section class="wpo-portfolio-section-s2 pt-1" id="gallery">
   <div class="container">
     <div class="wpo-section-title gallery-heading">
       <h1>{subtitle}</h1>
@@ -31,30 +32,34 @@ const { title, subtitle, images } = Astro.props;
           <div class="portfolio-grids gallery-container clearfix">
             <!-- Lặp qua mảng 'images' để hiển thị từng ảnh -->
             {
-              images.map((image, index) => (
-                <div class="grid">
-                  <div
-                    class="img-holder wow fadeInRight"
-                    data-wow-duration="1000ms"
-                    data-wow-delay={`${index * 300}ms`}
-                  >
-                    <a
-                      href={image.largeSrc}
-                      class="fancybox"
-                      data-fancybox-group="gall-1"
+              images.map((image, index) => {
+                // Chọn ngẫu nhiên một hiệu ứng từ mảng wowAnimations
+                const randomAnimation = wowAnimations[Math.floor(Math.random() * wowAnimations.length)];
+                return (
+                  <div class="grid">
+                    <div
+                      class={`img-holder wow ${randomAnimation}`}
+                      data-wow-duration="1200ms"
+                      data-wow-delay={`${index * 200}ms`}
                     >
-                      <img
-                        src={image.src}
-                        alt={image.alt}
-                        class="img img-responsive"
-                      />
-                      <div class="hover-content">
-                        <i class="ti-plus" />
-                      </div>
-                    </a>
+                      <a
+                        href={image.largeSrc}
+                        class="fancybox"
+                        data-fancybox-group="gall-1"
+                      >
+                        <img
+                          src={image.src}
+                          alt={image.alt}
+                          class="img img-responsive"
+                        />
+                        <div class="hover-content">
+                          <i class="ti-plus" />
+                        </div>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              ))
+                );
+              })
             }
           </div>
         </div>
