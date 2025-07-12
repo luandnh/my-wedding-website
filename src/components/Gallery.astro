@@ -1,0 +1,77 @@
+---
+// src/components/Gallery.astro
+
+// Định nghĩa các thuộc tính (props) mà component này sẽ nhận vào
+// title: Tiêu đề chính của section
+// subtitle: Tiêu đề phụ
+// images: Một mảng các đối tượng chứa thông tin ảnh
+export interface Props {
+  title: string;
+  subtitle: string;
+  images: {
+    src: string;
+    largeSrc: string;
+    alt: string;
+  }[];
+}
+
+const { title, subtitle, images } = Astro.props;
+---
+
+<!-- Bắt đầu Section Thư viện ảnh -->
+<section class="wpo-portfolio-section-s2 section-padding" id="gallery">
+  <div class="container">
+    <div class="wpo-section-title">
+      <h4>{subtitle}</h4>
+      <h2>{title}</h2>
+    </div>
+    <div class="sortable-gallery">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="portfolio-grids gallery-container clearfix">
+            <!-- Lặp qua mảng 'images' để hiển thị từng ảnh -->
+            {
+              images.map((image, index) => (
+                <div class="grid">
+                  <div
+                    class="img-holder wow fadeInRight"
+                    data-wow-duration="1000ms"
+                    data-wow-delay={`${index * 300}ms`}
+                  >
+                    <a
+                      href={image.largeSrc}
+                      class="fancybox"
+                      data-fancybox-group="gall-1"
+                    >
+                      <img
+                        src={image.src}
+                        alt={image.alt}
+                        class="img img-responsive"
+                      />
+                      <div class="hover-content">
+                        <i class="ti-plus" />
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline src="/js/custom-gallery.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", initializeGallery);
+</script>
+<style>
+  @media (max-width: 767px) {
+    .portfolio-grids .grid {
+      width: 33.3%;
+      padding: 5px !important;
+    }
+  }
+</style>

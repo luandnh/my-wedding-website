@@ -5,6 +5,40 @@ import Couple from "../components/Couple.astro";
 import Map from "../components/Map.astro";
 import Layout from "../layouts/Layout.astro";
 import Calendar from "../components/Calendar.astro";
+import Gallery from "../components/Gallery.astro";
+
+const myWeddingPhotos = [
+  {
+    src: "/images/album/image-01.jpeg",
+    largeSrc: "/images/album/image-01.jpeg",
+    alt: "Khoảnh khắc ngọt ngào của Luân và Phương",
+  },
+  {
+    src: "/images/album/image-02.jpeg",
+    largeSrc: "/images/album/image-02.jpeg",
+    alt: "Nụ cười hạnh phúc trong ngày trọng đại",
+  },
+  {
+    src: "/images/album/image-03.jpeg",
+    largeSrc: "/images/album/image-03.jpeg",
+    alt: "Luân và Phương - Cùng nhau viết nên câu chuyện tình yêu",
+  },
+  {
+    src: "/images/album/image-04.jpeg",
+    largeSrc: "/images/album/image-04.jpeg",
+    alt: "Ánh mắt trao nhau đầy yêu thương",
+  },
+  {
+    src: "/images/album/image-05.jpeg",
+    largeSrc: "/images/album/image-05.jpeg",
+    alt: "Ngày chúng ta về chung một nhà",
+  },
+  {
+    src: "/images/album/image-06.jpeg",
+    largeSrc: "/images/album/image-06.jpeg",
+    alt: "Luân và Phương - Bắt đầu một hành trình mới",
+  },
+];
 ---
 
 <Layout>
@@ -14,6 +48,11 @@ import Calendar from "../components/Calendar.astro";
     <Couple />
 
     <Calendar />
+    <Gallery
+      title="Album Hình Cưới"
+      subtitle="Khoảnh Khắc Ngọt Ngào"
+      images={myWeddingPhotos}
+    />
 
     <Map />
   </div>
