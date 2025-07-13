@@ -1,0 +1,80 @@
+---
+// src/components/MusicPlayer.astro
+// Component này sẽ phát nhạc nền và được điều khiển từ bên ngoài.
+---
+
+<div id="music-player-container" class="hidden">
+  <!-- Nhạc sẽ không tự phát ban đầu -->
+  <audio id="background-music" loop>
+    <source src="/media/audios/mylove_westlife.mp3" type="audio/mpeg" />
+    Trình duyệt của bạn không hỗ trợ phát âm thanh.
+  </audio>
+  <button id="mute-button" title="Bật/Tắt nhạc">
+    <!-- Icon ban đầu là tắt tiếng -->
+    <i class="fa fa-volume-up"></i>
+  </button>
+</div>
+
+<style>
+  #music-player-container {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 10000;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  #music-player-container.hidden {
+    display: none;
+  }
+  #music-player-container:not(.hidden) {
+    opacity: 1;
+    display: flex; /* Đảm bảo nút hiển thị */
+  }
+  #mute-button {
+    background-color: rgba(212, 176, 165, 0.8);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition:
+      background-color 0.3s,
+      transform 0.2s;
+  }
+  #mute-button:hover {
+    background-color: #c59586;
+    transform: scale(1.1);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const audio = document.getElementById("background-music");
+    const muteButton = document.getElementById("mute-button");
+    const muteIcon = muteButton.querySelector("i");
+
+    if (!audio || !muteButton) return;
+
+    // Xử lý sự kiện click vào nút Mute/Unmute
+    muteButton.addEventListener("click", function () {
+      // Logic đơn giản: chỉ bật/tắt tiếng
+      audio.muted = !audio.muted;
+
+      // Cập nhật icon tương ứng
+      if (audio.muted) {
+        muteIcon.classList.remove("fa-volume-up");
+        muteIcon.classList.add("fa-volume-off");
+      } else {
+        muteIcon.classList.remove("fa-volume-off");
+        muteIcon.classList.add("fa-volume-up");
+      }
+    });
+  });
+</script>

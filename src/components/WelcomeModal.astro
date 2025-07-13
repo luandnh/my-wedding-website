@@ -1,0 +1,96 @@
+---
+// src/components/WelcomeScreen.astro
+// Màn hình chào mừng, hoạt động như một nút bật/tắt nhạc.
+// Component này sẽ thay thế cho màn hình chờ trượt đi.
+---
+
+<div id="music-toggle-overlay">
+  <div class="content-wrapper">
+    <div class="welcome-couple-name">
+      Luân
+      <br />
+      &
+      <br />
+      Phương
+    </div>
+  </div>
+</div>
+
+<style>
+  #music-toggle-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(40, 40, 40, 0.75); /* Nền tối hơn một chút */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10001; /* Luôn ở trên cùng */
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 0.8s ease-out;
+  }
+
+  /* Lớp này sẽ được thêm vào sau lần click đầu tiên để làm mờ overlay */
+  #music-toggle-overlay.interactive {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    pointer-events: none; /* Cho phép click xuyên qua sau khi nhạc đã bật */
+  }
+
+  #music-toggle-overlay.interactive .content-wrapper {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .content-wrapper {
+    text-align: center;
+    color: white;
+    transition: opacity 0.8s ease-out;
+  }
+
+  .welcome-couple-name {
+    font-family: "Alex Brush", serif; /* Sử dụng font từ template */
+    font-size: clamp(80px, 12vw, 140px);
+    line-height: 1.1;
+    text-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  }
+</style>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    const overlay = document.getElementById("music-toggle-overlay");
+    const audio = document.getElementById("background-music");
+    const musicPlayerContainer = document.getElementById(
+      "music-player-container"
+    );
+
+    if (overlay && audio) {
+      // Thiết lập âm lượng
+      audio.volume = 0.3;
+
+      // Xử lý lần click đầu tiên và duy nhất trên overlay
+      overlay.addEventListener(
+        "click",
+        function () {
+          // 1. Phát nhạc
+          audio.play().catch((e) => console.error("Lỗi phát nhạc:", e));
+
+          // 2. Ẩn màn hình overlay đi
+          overlay.classList.add("interactive");
+
+          // 3. Hiển thị nút điều khiển nhạc riêng (nếu có)
+          if (musicPlayerContainer) {
+            musicPlayerContainer.classList.remove("hidden");
+          }
+        },
+        { once: true }
+      ); // Event listener chỉ chạy một lần
+    }
+  });
+</script>
